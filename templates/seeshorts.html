@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}    
+
+{% block navigation %}
+    {{ super() }}
+{% endblock %}    
+
+
+{% block content %}
+
+<div class="container"> <br><br><br>
+  
+  {%if session.logged_in %} 
+
+
+ <br><br> <br>
+ 
+  <form class="form-horizontal" action="/searchrequest" id="searchform" method = "POST">
+    
+
+       <div class="control-group">
+    <label class="control-label" for="shorturl">SHORT URL</label>
+    <div class="controls">
+      <input type="text" id="shorturl" placeholder="short url" name="shorturl">
+    </div>
+  </div>
+
+      <div class="control-group">      
+        <div class="controls">
+    <button class="btn btn-large btn-primary" id="createshort" type="submit">SEARCH</button>
+        </div>
+      </div>
+    
+</form>
+    
+   </div> 
+
+    <div class="container">
+
+      <br><br>
+  
+
+  {% if shorts %}
+
+  <ol class="bitgroup">
+
+    {% for key, value in shorts.iteritems() %}            
+
+      <li id="{{key}}" class="bitlist">
+          
+                 <a>Shorturl</a> {{ key }} <t><br>
+                 <a>Longurl </a>{{ value.longurl }} <br>
+                 <a>Created Date </a> {{ value.created }} <br>
+                 <a>Created By </a>{{ session.user }}
+                   <br><br><br>
+                  
+          
+      </li>
+    {% endfor %}    
+  
+</ul>
+  
+{% else %}
+<h3> No data to show ! <h3>
+
+{% endif %}
+
+{% else %} <br><br> <br><br>
+
+<p> You have to be logged in to SEE shorts . If you want to login,  <a href="/login">login here</a>. if you are new user <a href="/register"> register here </a> </p>
+ 
+{% endif %}
+</div> 
+   
+
+
+ {% endblock %}
+ 
+
+
+
+
+      
+    
+
+
+

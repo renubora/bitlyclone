@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}    
+
+{% block navigation %}
+    {{ super() }}
+{% endblock %}   
+
+
+
+
+{% block content %}  
+
+<div class="container">
+
+ 
+
+{%if session.logged_in %}
+  
+
+<div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+  <li><a href="/create">CREATE SHORTS</a></li>
+  <li><a href="/assoc">SEE SHORTS</a></li>
+  <li><a href="/create">CREATE SHORTS</a></li>
+  <li><a href="/assoc">SEE SHORTS</a></li>
+</ul>
+</div></div></div></div>
+
+
+
+  
+{% else %}
+
+<p> If you want to login,  <a href="/login">login here</a>. if you are new user <a href="/register"> register here </a> </p>
+ 
+{% endif %}
+</div> 
+
+    
+
+
+
+{% endblock %}
+
+
+
+
+ 
+
+  
+

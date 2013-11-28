@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    {% block head %}
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        
+        <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+
+  
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    
+
+    <script src = "{{url_for('static',filename = 'scriptfinal.js')}}"></script>
+     <link rel = "stylesheet" href = "{{url_for('static', filename='bootstrap.css')}}" type = "text/css"> 
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+    </head>
+    {% endblock %}
+
+
+
+<body>
+{% block navigation %}
+
+
+ <div class="masthead">
+        <h3 class="muted">BITLY</h3>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li><a href="/login">LOGIN</a></li>
+                          <li><a href="/logout">LOGOUT</a></li>
+
+                <li><a href="/home">PROFILE</a></li>
+                <li><a href="/register">REGISTER</a></li>
+
+
+
+                          <li><a href="/create">CREATE SHORTS</a></li>
+                          <li><a href="/assoc">SEE SHORTS</a></li>
+                          {%if session.logged_in %}
+                          <li> <a href="">Welcome {{ session.user }} 
+                            </li>
+                          {% endif %}
+
+  
+
+                          
+                          
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+      </div>
+
+
+
+          
+{% endblock %}
+
+    <div id="content">
+        {% block content %}
+
+        
+
+        {% endblock %}
+    </div>
+
+
+
+    
+</body>

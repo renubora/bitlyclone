@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}    
+
+{% block navigation %}
+    {{ super() }}
+{% endblock %}   
+
+
+
+
+{% block content %}  
+
+
+  
+<div class="container"> <br><br><br>
+  
+{%if session.logged_in %} 
+  <form class="form-horizontal" action="/createshort" id="urlform" method = "POST">
+    <br><br> <br>
+      
+      <div class="control-group">
+        <label class="control-label" for="longurl">LONG URL</label>
+        <div class="controls">
+           <input type="text" placeholder="long url here " id="longurl" name="longurl"> 
+        </div>
+      </div>
+
+      
+
+       <div class="control-group">
+    <label class="control-label" for="shorturl">SHORT URL</label>
+    <div class="controls">
+      <input type="text" id="shorturl" placeholder="short url" name="shorturl">
+    </div>
+  </div>
+
+      <div class="control-group">      
+        <div class="controls">
+    <button class="btn btn-large btn-primary" id="createshort" type="submit">CREATE SHORT URL</button>
+        </div>
+      </div>
+    
+
+  
+    
+</form>
+{% else %} <br><br> <br><br>
+
+<p> You have to be logged in to create shorts . If you want to login,  <a href="{{url_for('login')}}">login here</a>. if you are new user <a href="{{url_for('register')}}"> register here </a> </p>
+ 
+{% endif %}
+    
+</div> 
+
+
+  
+
+
+    
+
+
+
+{% endblock %}
+
+
+
+
+ 
+
+  
+
