@@ -17,11 +17,11 @@
 
 
   
-<div class="container"> <br><br><br>
+<div class="container"> <br>
   
 {%if session.logged_in %} 
   <form class="form-horizontal" action="/createshort" id="urlform" method = "POST">
-    <br><br> <br>
+    <br>
       
       <div class="control-group">
         <label class="control-label" for="longurl">LONG URL</label>
@@ -49,7 +49,7 @@
   
     
 </form>
-{% else %} <br><br> <br><br>
+{% else %} <br><br>
 
 <p> You have to be logged in to create shorts . If you want to login,  <a href="{{url_for('login')}}">login here</a>. if you are new user <a href="{{url_for('register')}}"> register here </a> </p>
  

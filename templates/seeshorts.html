@@ -13,12 +13,12 @@
 
 {% block content %}
 
-<div class="container"> <br><br><br>
+<div class="container"> <br>
   
   {%if session.logged_in %} 
 
 
- <br><br> <br>
+ <br>
  
   <form class="form-horizontal" action="/searchrequest" id="searchform" method = "POST">
     
@@ -42,7 +42,7 @@
 
     <div class="container">
 
-      <br><br>
+      <br>
   
 
   {% if shorts %}
@@ -70,7 +70,7 @@
 
 {% endif %}
 
-{% else %} <br><br> <br><br>
+{% else %} <br>
 
 <p> You have to be logged in to SEE shorts . If you want to login,  <a href="/login">login here</a>. if you are new user <a href="/register"> register here </a> </p>
  
