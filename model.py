@@ -1,9 +1,9 @@
-from sqlalchemy import create_engine,Table, Column, Integer, ForeignKey,String, Date
-from sqlalchemy.orm import scoped_session,sessionmaker,relationship, backref
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Table, Column, Integer, ForeignKey,String, Date
+from sqlalchemy.orm import relationship, backref
+
 
 from datetime import datetime
-from config import Base
+from config import *
 
 # methods to initalize database and have it up and running 
 
